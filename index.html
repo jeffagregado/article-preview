@@ -8,24 +8,63 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope" />
 		<link rel="stylesheet" type="text/css" href="./styles/reset.css" />
 		<link rel="stylesheet" type="text/css" href="./styles/styles.css" />
-
+		<script src="./js/index.js" defer></script>
 		<title>Frontend Mentor | Article preview component</title>
 	</head>
 	<body>
 		<div class="wrapper">
 			<main class="container">
 				<div class="cardContainer">
-          <div class="card">
-            <div class="cardImage"></div>
-            <div class="cardBody">
-              <h2>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
-              <p>
-                Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninvinting. I've got some simeple tips to
-                help you make any room feel complete
-              </p>
-            </div>
-          </div>
-        </div>
+					<div class="card">
+						<div class="cardImage"></div>
+						<div class="cardBody">
+							<h2>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
+							<p>
+								Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninvinting. I've got some simeple tips to
+								help you make any room feel complete
+							</p>
+							<div class="cardFooter">
+								<div class="cardAuthor">
+									<img src="./images/avatar-michelle.jpg" alt="Michelle" class="authorIcon" />
+									<div class="authorStamp">
+										<h4>Michelle Appleton</h4>
+										<p>28 Jun 2020</p>
+									</div>
+								</div>
+								<div class="cardShare">
+									<div class="shareIcon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+											<path
+												fill="#6E8098"
+												d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+											/>
+										</svg>
+									</div>
+									<div class="tooltip">
+										<p>Share</p>
+										<ul class="icons">
+											<li>
+												<a href="#">
+													<img src="./images/icon-facebook.svg" alt="Facebook" />
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="./images/icon-twitter.svg" alt="Twitter" />
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="./images/icon-pinterest.svg" alt="Pinterest" />
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</main>
 		</div>
 	</body>

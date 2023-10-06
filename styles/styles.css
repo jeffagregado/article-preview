@@ -56,7 +56,7 @@ p {
 	position: relative;
 	width: 730px;
 	height: 280px;
-	overflow: hidden;
+	/* overflow: hidden; */
 	background-color: white;
 	grid-template-columns: 285px 1fr;
 	container-type: inline-size;
@@ -67,6 +67,7 @@ p {
 	width: 100%;
 	height: 100%;
 	background: url('../images/drawers.jpg') no-repeat left center/cover;
+	border-radius: 10px 0 0 10px;
 }
 
 .cardImage img {
@@ -87,76 +88,178 @@ p {
 	letter-spacing: 1px;
 }
 
-.card .cardIcon {
+.cardFooter {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	margin-top: 18px;
+}
+
+.cardAuthor {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.authorIcon {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.authorStamp {
+	display: flex;
+	flex-direction: column;
+}
+
+.tooltip {
 	position: absolute;
-	right: 2rem;
-	bottom: 2.05rem;
+	background-color: var(--desaturatedDarkBlue);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 40px;
+	height: 10px;
+	border-radius: 13px;
+	right: -75px;
+  bottom: 90px;
+}
+.tooltip:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-top-color: var(--desaturatedDarkBlue);
+	border-bottom: 0;
+	margin-bottom: -15px;
+	margin-left: -15px;
+}
+.tooltip p {
+	text-transform: uppercase;
+	margin-right: 0px;
+	color: var(--lightGrayishBlue);
+	font-size: 13px;
+	letter-spacing: 5px;
+	margin-right: 15px;
+}
+.tooltip ul {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
 }
 
-.single-card {
-	grid-column: 1 / 2;
-	grid-row: 1 / span 2;
-	align-self: center;
+
+.shareIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 8px;
+	border-radius: 50%;
+	background-color: var(--lightGrayishBlue);
+	cursor: pointer;
+}
+/* .shareIcon:hover {
+	background-color: var(--desaturatedDarkBlue);
+} */
+.shareIcon svg path {
+	fill: var(--desaturatedDarkBlue);
+}
+/* .shareIcon:hover svg path {
+	fill: white;
+} */
+/* .shareIcon:hover, .shareIcon:hover svg path {
+	transition: all 0.2s ease-in-out;
+} */
+
+.shareIcon.active {
+	background-color: var(--desaturatedDarkBlue);
+}
+/* .shareIcon.active:hover {
+	background-color: var(--lightGrayishBlue);
+} */
+
+.shareIcon.active svg path {
+	fill: white;
+}
+/* .shareIcon.active:hover svg path {
+	fill: var(--desaturatedDarkBlue);
+} */
+.tooltip.active {
+	display: flex;
 }
 
-.double-card {
-	grid-column: 2 / 2;
-}
-
-.single-card:last-child {
-	grid-column: 3 / 4;
-	grid-row: 1 / span 2;
-}
-
-.cardSupervisor {
-	border-top: 3px solid var(--primaryCyan);
-}
-.cardTeamBuilder {
-	border-top: 3px solid var(--primaryRed);
-}
-.cardKarma {
-	border-top: 3px solid var(--primaryOrange);
-}
-.cardCalculator {
-	border-top: 3px solid var(--primaryBlue);
-}
-
-/* @container (max-width: 768px) {
-	.heroTitle {
-		margin-bottom: 5.4rem;
-	}
-	.mobileOnly {
-		display: none;
-	}
+@media only screen and (max-width: 768px) {
 	.wrapper {
 		padding: 0 2rem;
+		max-width: 100%;
+	}
+	.container {
+		flex-direction: row;
+	}
+	.cardContainer {
+		margin-top: 100px;
+		width: 100%;
+	}
+	.card {
+		width: 100%;
+		height: auto;
+		grid-template-columns: 1fr;
+		grid-template-rows: 200px 1fr;
+		margin-bottom: 2rem;
+	}
+	.cardImage {
+		grid-row: 1/2;
+		border-radius: 10px 10px 0 0;
+	}
+	.cardBody {
+		grid-row: 2/3;
+		padding: 2rem 2.5rem 1rem;
+	}
+	.cardBody h2 {
+		font-size: clamp(15px, 3vw, 2rem);
+	}
+	.cardFooter {
+		margin-top: 2rem;
+	}
+	.shareIcon.active {
+		position: relative;
+		z-index: 999;
+		background-color: var(--grayishBlue);
+	}
+	.tooltip.active {
+		right: 0;
+		bottom: 0;
+		display: flex;
+		width: 100%;
+		border-radius: 0 0 10px 10px;
+		justify-content: flex-start;
+		padding: 35px 40px;
+	}
+	.tooltip.active:after {
+		display: none;
 	}
 }
 
-@container (max-width: 730px) {
-	.cardContainer {
-		grid-template-columns: repeat(1, minMax(0, 350px));
-		grid-template-rows: auto;
-		gap: 23px;
+/* @media only screen and (min-width: 769px) {
+	.shareIcon.active {
+		background-color: var(--desaturatedDarkBlue);
 	}
-	.card {
+	.shareIcon.active:hover {
+		background-color: var(--lightGrayishBlue);
+	}
+	
+	.shareIcon.active svg path {
+		fill: white;
+	}
+	.shareIcon.active:hover svg path {
+		fill: var(--desaturatedDarkBlue);
+	}
+	.tooltip.active {
 		display: flex;
-		height: auto;
-		padding: 1.5rem;
-		flex-direction: column;
-	}
-	.single-card,
-	.double-card,
-	.single-card:last-child {
-		grid-column: 1 / 2;
-		grid-row: auto;
-	}
-	.card .cardIcon {
-		display: flex;
-		position: relative;
-		right: 0;
-		bottom: 0;
-		margin-top: 2rem;
-		align-self: flex-end;
 	}
 } */
