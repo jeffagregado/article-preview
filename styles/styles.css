@@ -90,10 +90,10 @@ p {
 
 .cardFooter {
 	display: flex;
-	justify-content: space-between;
 	width: 100%;
-	align-items: center;
 	margin-top: 18px;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .cardAuthor {
@@ -114,37 +114,37 @@ p {
 }
 
 .tooltip {
-	position: absolute;
-	background-color: var(--desaturatedDarkBlue);
 	display: none;
+	position: absolute;
+	right: -75px;
+	bottom: 90px;
+	height: 10px;
+	padding: 30px 40px;
+	background-color: var(--desaturatedDarkBlue);
 	justify-content: center;
 	align-items: center;
-	padding: 30px 40px;
-	height: 10px;
 	border-radius: 13px;
-	right: -75px;
-  bottom: 90px;
 }
 .tooltip:after {
-	content: '';
 	position: absolute;
 	bottom: 0;
 	left: 50%;
 	width: 0;
 	height: 0;
-	border: 15px solid transparent;
-	border-top-color: var(--desaturatedDarkBlue);
-	border-bottom: 0;
 	margin-bottom: -15px;
 	margin-left: -15px;
+	border: 15px solid transparent;
+	border-bottom: 0;
+	content: '';
+	border-top-color: var(--desaturatedDarkBlue);
 }
 .tooltip p {
-	text-transform: uppercase;
 	margin-right: 0px;
+	margin-right: 15px;
 	color: var(--lightGrayishBlue);
 	font-size: 13px;
 	letter-spacing: 5px;
-	margin-right: 15px;
+	text-transform: uppercase;
 }
 .tooltip ul {
 	display: flex;
@@ -153,42 +153,26 @@ p {
 	align-items: center;
 }
 
-
 .shareIcon {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	padding: 8px;
-	border-radius: 50%;
 	background-color: var(--lightGrayishBlue);
 	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
 }
-/* .shareIcon:hover {
-	background-color: var(--desaturatedDarkBlue);
-} */
 .shareIcon svg path {
 	fill: var(--desaturatedDarkBlue);
 }
-/* .shareIcon:hover svg path {
-	fill: white;
-} */
-/* .shareIcon:hover, .shareIcon:hover svg path {
-	transition: all 0.2s ease-in-out;
-} */
 
 .shareIcon.active {
 	background-color: var(--desaturatedDarkBlue);
 }
-/* .shareIcon.active:hover {
-	background-color: var(--lightGrayishBlue);
-} */
 
 .shareIcon.active svg path {
 	fill: white;
 }
-/* .shareIcon.active:hover svg path {
-	fill: var(--desaturatedDarkBlue);
-} */
 .tooltip.active {
 	display: flex;
 }
@@ -202,23 +186,23 @@ p {
 		flex-direction: row;
 	}
 	.cardContainer {
-		margin-top: 100px;
 		width: 100%;
+		margin-top: 100px;
 	}
 	.card {
 		width: 100%;
 		height: auto;
+		margin-bottom: 2rem;
 		grid-template-columns: 1fr;
 		grid-template-rows: 200px 1fr;
-		margin-bottom: 2rem;
 	}
 	.cardImage {
 		grid-row: 1/2;
 		border-radius: 10px 10px 0 0;
 	}
 	.cardBody {
-		grid-row: 2/3;
 		padding: 2rem 2.5rem 1rem;
+		grid-row: 2/3;
 	}
 	.cardBody h2 {
 		font-size: clamp(15px, 3vw, 2rem);
@@ -232,34 +216,15 @@ p {
 		background-color: var(--grayishBlue);
 	}
 	.tooltip.active {
+		display: flex;
 		right: 0;
 		bottom: 0;
-		display: flex;
 		width: 100%;
+		padding: 35px 40px;
 		border-radius: 0 0 10px 10px;
 		justify-content: flex-start;
-		padding: 35px 40px;
 	}
 	.tooltip.active:after {
 		display: none;
 	}
 }
-
-/* @media only screen and (min-width: 769px) {
-	.shareIcon.active {
-		background-color: var(--desaturatedDarkBlue);
-	}
-	.shareIcon.active:hover {
-		background-color: var(--lightGrayishBlue);
-	}
-	
-	.shareIcon.active svg path {
-		fill: white;
-	}
-	.shareIcon.active:hover svg path {
-		fill: var(--desaturatedDarkBlue);
-	}
-	.tooltip.active {
-		display: flex;
-	}
-} */
